@@ -1,0 +1,81 @@
+    body {
+      background: #1a1a1a;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+
+    .mug {
+      position: relative;
+      width: 150px;
+      height: 120px;
+      background: #ff7518; /* Pumpkin orange */
+      border-radius: 0 0 20px 20px;
+      box-shadow: inset 0 -10px 0 #e85c00;
+    }
+
+    .mug::before {
+      content: '';
+      position: absolute;
+      right: -30px;
+      top: 20px;
+      width: 30px;
+      height: 60px;
+      border: 5px solid #ff7518;
+      border-left: none;
+      border-radius: 0 30px 30px 0;
+    }
+
+    .steam {
+      position: absolute;
+      top: -40px;
+      left: 50%;
+      width: 10px;
+      height: 40px;
+      background: rgba(255, 255, 255, 0.3);
+      border-radius: 50%;
+      animation: steam 2s infinite ease-in-out;
+    }
+
+    .steam:nth-child(2) {
+      left: 40%;
+      animation-delay: 0.5s;
+    }
+
+    .steam:nth-child(3) {
+      left: 60%;
+      animation-delay: 1s;
+    }
+
+    @keyframes steam {
+      0% { transform: translateY(0) scaleX(1); opacity: 0.6; }
+      50% { transform: translateY(-20px) scaleX(1.2); opacity: 0.3; }
+      100% { transform: translateY(-40px) scaleX(1); opacity: 0; }
+    }
+
+    .face {
+      position: absolute;
+      bottom: 20px;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .eye, .mouth {
+      background: #000;
+      border-radius: 50%;
+    }
+
+    .eye {
+      width: 10px;
+      height: 10px;
+    }
+
+    .mouth {
+      width: 20px;
+      height: 10px;
+      border-radius: 0 0 20px 20px;
+      transform: translateY(5px);
+    }
